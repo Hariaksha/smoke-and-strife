@@ -2,7 +2,7 @@
 
 Research project estimating the causal effect of wildfire-driven air pollution on social conflict in Indonesia, using a wind-direction instrument to isolate exogenous variation in local smoke exposure.
 
-The current draft working paper is in this repository: [`paper/draft.pdf`](paper/draft.pdf) ([source](paper/draft.tex)).
+The current draft working paper is in this repository: [`paper/draft_v4_pollution.pdf`](paper/draft_v4_pollution.pdf) ([source](paper/draft_v4_pollution.tex)). Earlier drafts are kept in `paper/` for reference.
 
 ---
 
@@ -10,41 +10,42 @@ The current draft working paper is in this repository: [`paper/draft.pdf`](paper
 
 Indonesia experiences recurring, large-scale peat and forest fires, driven by land-clearing practices and intensified during El Niño-induced dry seasons, that generate severe transboundary haze across the western archipelago. This project asks whether short-run exposure to that fire-driven air pollution causally affects the incidence of social conflict at the district-month level.
 
-Local fire activity is plausibly endogenous to local conflict: land disputes, weak governance, and economic distress that drive conflict may also drive land-clearing fires. To address this, the project instruments local fire intensity with **upwind fire radiative power**, fire activity in locations whose smoke plumes the prevailing wind would carry toward a district, but which are not themselves affected by that district's local conditions.
+Local fire activity is plausibly endogenous to local conflict: land disputes, weak governance, and economic distress that drive conflict may also drive land-clearing fires. The project therefore uses **upwind fire radiative power**, fire activity in locations whose smoke the prevailing wind would carry toward a district, as a source of variation driven by wind rather than by local conditions. The reduced form (conflict on upwind fire) is the primary evidence; instrumental-variables estimates scale it by the district's own fire intensity or, more directly, by reanalysis surface PM2.5.
 
 ---
 
 ## Headline Findings
 
-- In the **full sample** (447 districts, Feb. 2015–Jun. 2025), instrumented fire intensity has **no detectable average effect** on all-event counts under the baseline specification, robust to a Poisson IV control-function specification. This full-sample null is *not* uniform across outcomes, however: a more rigorous robustness check that fully instruments the distributed-lag structure (see below) reveals a significant negative full-sample effect specifically on political-violence events.
-- In **conflict-active districts** (those with conflict in ≥30% of sample months), fire intensity has an economically meaningful **negative** effect on conflict events and political-violence events. This result is robust to, and if anything strengthens under, fully instrumenting the lag structure.
-- A **two-category event-type decomposition** shows this negative effect is concentrated entirely in a composite **riots/protests** category, and is a precise zero for battles and organized violence, initially suggestive of a mechanism in which severe haze disrupts public gathering and street-level collective action.
-- A **finer, four-category decomposition** into literal ACLED event types complicates this story: **Protests** (the category most directly tied to planned public assembly, and the largest by far) shows **no significant effect**, while the negative effect is instead concentrated in **Riots** and, unexpectedly, **Violence against civilians** (which does not require public assembly in the same sense), alongside a weaker, marginally significant effect on **Strategic developments** that a clean disruption-of-assembly story does not predict. The mechanism is real but narrower, and less well understood, than a simple "haze stops protests" story.
-- The riots/protests result from the two-category decomposition is the one finding that survives every robustness check applied (a placebo test using a randomly-assigned distant district's instrument, a check for shared regional seasonal cycles, Conley spatial-correlation standard errors, and a fully-instrumented distributed-lag specification); the broader all-events and political-violence results are comparatively more sensitive to these checks.
-- Fully instrumenting the one-month lag (rather than leaving it as an uninstrumented control, a constraint of the IV software used) also reveals a new, suggestive pattern: a negative contemporaneous effect followed by a positive, often significant, one-month-lagged effect, consistent with a short-run disruption followed by a partial rebound rather than pure suppression. This is reported as a single robustness check, not an independently validated finding.
+- **Full sample** (481 districts, Feb. 2015–Jun. 2025): no robust average effect of upwind fire on conflict counts in the baseline specification.
+- **Conflict-active districts** (conflict in ≥30% of months): more upwind fire reduces monthly conflict events (reduced form −0.026, p = 0.002). The result is unchanged when fires inside the district are excluded from the instrument or when local rainfall and temperature are controlled for, and it survives Conley standard errors and the weak-instrument-robust Anderson–Rubin test.
+- **Pollution directly:** instrumenting MERRA-2 surface PM2.5 with upwind fire, a 10% increase in PM2.5 reduces conflict events in conflict-active districts by about 8% of the mean (Anderson–Rubin p = 0.004), with or without controls for the district's own fires. The first stage is strong (effective F = 41 in the full panel, 26 in the conflict-active subsample). A check restricted to districts containing their own MERRA-2 grid point is uninformative, because only 25 conflict-active districts qualify; the reduced form is equally imprecise there, so the loss of precision reflects the smaller sample rather than the pollution measure.
+- **Not an artifact of the 30% cutoff:** using conflict propensity measured in 2015–2017, before the estimation window, the effect is near zero in districts with no prior conflict and grows steadily with prior conflict. In proportional (Poisson) terms the effect does not vary detectably with propensity, which suggests a similar small percentage effect everywhere that is only measurable where conflict is common.
+- **Identification checks:** next month's upwind fire does not predict this month's conflict (lead coefficient p = 0.985); the results strengthen on 2018–2025, after ACLED's Indonesia coverage expands; and the all-events result survives a false-discovery-rate correction across the four outcomes.
+- **Event types:** violence against civilians, most often committed by state security forces, is the most robust component. Political violence and Riots/VAC are suggestive only, since they weaken under the Anderson–Rubin test. Protests account for most of the decline in all events but do not survive the stricter checks.
 - No robust evidence that fire exposure affects conflict-related **fatalities**.
 
-See [`paper/draft.pdf`](paper/draft.pdf) for the full results, the Related Literature section, and detailed robustness analysis.
+See [`paper/draft_v4_pollution.pdf`](paper/draft_v4_pollution.pdf) for the full results and robustness analysis.
 
 ---
 
 ## Data
 
-- **Fire detections:** NASA VIIRS active fire product (Suomi-NPP / NOAA-20, 375m resolution), via NASA FIRMS.
-- **Wind fields:** ERA5 reanalysis (Copernicus Climate Data Store), monthly mean 10m wind components.
+- **Fire detections:** NASA VIIRS active fire product (Suomi-NPP, 375m resolution), via NASA FIRMS.
+- **Wind and weather:** ERA5 monthly reanalysis (Copernicus Climate Data Store): 10m wind components, total precipitation, and 2m temperature.
+- **Air pollution:** MERRA-2 monthly aerosol diagnostics (M2TMNXAER), from NASA GES DISC (requires a free NASA Earthdata account): surface PM2.5 and aerosol optical depth. The processed district-month file is in `data/pollution/`.
 - **Conflict events:** ACLED (Armed Conflict Location & Event Data Project), Indonesia.
 - **Administrative boundaries:** GADM v4.1, Level 2 (kabupaten/kota).
 
-See the Data Availability Statement in the paper for details on reconstructing the raw inputs, most of which exceed GitHub's file-size limits and are linked to their public sources rather than hosted directly.
+See the Data Availability Statement in the paper for details on reconstructing the raw inputs, some of which exceed GitHub's file-size limits and are linked to their public sources rather than hosted directly.
 
 ---
 
 ## Methodology
 
-- **Upwind instrument:** for each district-month, the total fire radiative power of detections lying upwind of the district within a fixed radius and angular cone defined by that month's wind direction.
-- **Two-stage least squares (IV)** with district and year-month fixed effects, province-clustered standard errors. The main distributed-lag specifications instrument only the contemporaneous treatment (a constraint of the `pyfixest` estimator used, which supports a single endogenous regressor); a custom two-way-demeaned GMM/2SLS estimator, validated against `pyfixest`'s output, is used to additionally instrument the lag simultaneously as a robustness check.
-- **Poisson IV control function** (two-stage residual inclusion, following Terza, Basu & Rathouz, 2008) to address extreme zero-inflation in the conflict-count outcomes.
-- **Robustness:** conflict-activity-threshold heterogeneity, a two-way and a four-way event-type decomposition (using both composite and literal individual ACLED categories), a placebo/falsification test, a province-by-calendar-month seasonal-confound check, Conley spatial-correlation standard errors, and a fully-instrumented distributed-lag specification.
+- **Upwind instrument:** for each district-month, the total fire radiative power of detections within 300 km and within 45° of the direction the wind blows from.
+- **Reduced form and two-stage least squares** with district and year-month fixed effects and province-clustered standard errors. The endogenous variable is either the district's own fire intensity (log FRP) or surface PM2.5 / aerosol optical depth from MERRA-2.
+- **Weak-instrument diagnostics:** Montiel Olea–Pflueger effective F and Anderson–Rubin tests.
+- **Robustness:** conflict-activity heterogeneity and a pre-determined continuous conflict-propensity measure; event-type decompositions; placebo instruments and lead (placebo-in-time) tests; province × calendar-month and province × year-month fixed effects; own-fire-excluded instrument; local weather controls; Conley standard errors; a fully instrumented distributed-lag specification; a 2018–2025 sample; and sharpened q-values for multiple testing.
 
 ---
 
@@ -52,11 +53,11 @@ See the Data Availability Statement in the paper for details on reconstructing t
 
 ```text
 climate-conflict/
-├── paper/             # Draft working paper (draft.tex / draft.pdf), references.bib, figures/
-├── analysis/          # Jupyter notebooks: wind-IV.ipynb (main analysis), fixed-effects.ipynb (preliminary correlational evidence), generate_maps.py
-├── data/              # Raw and intermediate datasets (administrative, climate, unrest, wellbeing)
-├── literature/         # Background papers cited in the project, plus lit-review.xlsx (annotated source list)
-├── publications/      # Conference poster and abstract materials (urca-2026)
+├── paper/             # Draft working papers (draft_v4_pollution is current), references.bib, figures/
+├── analysis/          # Jupyter notebooks (see below) and output/ (result tables and figures)
+├── data/              # Raw and processed datasets (administrative, climate, pollution, unrest, wellbeing)
+├── literature/        # Background papers cited in the project, plus lit-review.xlsx (annotated source list)
+├── publications/      # Conference poster and abstract materials
 └── info.md            # Project notes
 ```
 
@@ -65,13 +66,24 @@ climate-conflict/
 ## Contents
 
 ### `paper/`
-The draft working paper, `draft.tex`/`draft.pdf`, with its bibliography (`references.bib`) and figures (`figures/`). This is the primary, up-to-date research output of this project.
+The current draft, `draft_v4_pollution.tex`/`.pdf`, with its bibliography (`references.bib`) and figures (`figures/`). Earlier drafts (`draft.tex`, `draft_v2_weather_controls.tex`, `draft_v3_reduced_form.tex`) are kept for comparison.
 
 ### `analysis/`
-`wind-IV.ipynb` is the main analysis notebook: data construction, upwind-instrument construction, first- and second-stage IV estimation, and all robustness checks. `fixed-effects.ipynb` contains preliminary, non-instrumented correlational models that motivate the IV design (Section 4 of the paper). `generate_maps.py` produces the geographic figures used in the paper.
+Run `wind-IV.ipynb` first; the other notebooks read the panel it writes (`iv_panel_district.csv`).
+
+| Notebook | Contents |
+|---|---|
+| `wind-IV.ipynb` | Main analysis: panel construction, upwind instrument, first and second stages, and most robustness checks |
+| `weather-controls.ipynb` | ERA5 precipitation and temperature controls; Anderson–Rubin tests |
+| `pollution-iv.ipynb` | MERRA-2 PM2.5 and aerosol optical depth as the endogenous variable, including the own-grid-point check |
+| `conflict-propensity.ipynb` | Continuous and binned conflict-propensity heterogeneity |
+| `identification-checks.ipynb` | Lead placebo, 2018–2025 sample, sharpened q-values |
+| `fixed-effects.ipynb` | Preliminary, non-instrumented correlational models |
+
+`generate_maps.py` produces the geographic figures used in the paper.
 
 ### `data/`
-Raw and processed datasets: fire detections, wind fields, conflict events, administrative boundaries, and supplementary socioeconomic data.
+Raw and processed datasets: fire detections, wind and weather fields, pollution, conflict events, administrative boundaries, and supplementary socioeconomic data.
 
 ### `literature/`
 PDFs of the papers cited in the paper's Related Literature section and elsewhere, plus `lit-review.xlsx`, an annotated spreadsheet of each source's findings and relevance to this project.
@@ -94,4 +106,4 @@ Repository: [https://github.com/Hariaksha/wildfire-conflict](https://github.com/
 
 If you use or reference this project, please cite it as an unpublished working paper:
 
-> Gunda, H. *Smoke and Strife: Fire Exposure and Social Conflict in Indonesia.* Working paper, [paper/draft.pdf](paper/draft.pdf).
+> Gunda, H. *Smoke and Strife: Fire Exposure and Social Conflict in Indonesia.* Working paper, [paper/draft_v4_pollution.pdf](paper/draft_v4_pollution.pdf).
