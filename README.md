@@ -23,6 +23,7 @@ Local fire activity is plausibly endogenous to local conflict: land disputes, we
 - **Not an artifact of the 30% cutoff:** using conflict propensity measured in 2015–2017, before the estimation window, the effect is near zero in districts with no prior conflict and grows steadily with prior conflict. In proportional (Poisson) terms the effect does not vary detectably with propensity, which suggests a similar small percentage effect everywhere that is only measurable where conflict is common.
 - **Identification checks:** next month's upwind fire does not predict this month's conflict (lead coefficient p = 0.985); the results strengthen on 2018–2025, after ACLED's Indonesia coverage expands; and the all-events result survives a false-discovery-rate correction across the four outcomes.
 - **Mechanisms:** the evidence points to two channels. Protests fall with smoke from fires in *other* provinces, which cannot draw on local security forces, consistent with a direct effect of smoke. Events carried out by state security forces fall about five times as much as protests in proportional terms, and significantly only with fires in the district's *own* province, whose fire task force the same forces staff (though this contrast is not statistically decisive). Fatal events fall more than other events, which argues against a reporting explanation, and conflict does not rebound in the following months.
+- **Papua:** Papua contributes to the headline estimate (excluding it, the all-events reduced form is −0.020, p = 0.041, Anderson–Rubin p = 0.08), but both mechanism channels hold outside Papua. The decline in non-state violence against civilians is confined to Papua.
 - **Event types:** violence against civilians, most often committed by state security forces, is the most robust component. Political violence and Riots/VAC are suggestive only, since they weaken under the Anderson–Rubin test. Protests account for most of the decline in all events but do not survive the stricter checks.
 - No robust evidence that fire exposure affects conflict-related **fatalities**.
 
@@ -82,6 +83,7 @@ Run `wind-IV.ipynb` first; the other notebooks read the panel it writes (`iv_pan
 | `conflict-propensity.ipynb` | Continuous and binned conflict-propensity heterogeneity |
 | `identification-checks.ipynb` | Lead placebo, 2018–2025 sample, sharpened q-values |
 | `state-capacity-province.ipynb` | Rebuilds the upwind instrument split into same-province and other-province fire, to separate smoke from fire-response (state-capacity) channels |
+| `papua.ipynb` | Main result and mechanism tests excluding Papua, and within Papua |
 | `mechanisms.ipynb` | Tests of avoidance, state-capacity diversion and reporting explanations by event type, actor and source; temporal and spatial displacement |
 | `fixed-effects.ipynb` | Preliminary, non-instrumented correlational models |
 
