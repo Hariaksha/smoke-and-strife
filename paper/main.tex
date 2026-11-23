@@ -16,7 +16,7 @@
 \onehalfspacing
 
 \title{Smoke and Strife: Fire Exposure and Social Conflict in Indonesia}
-\author{Hariaksha Gunda\thanks{Email: \href{mailto:hgunda@crimson.ua.edu}{hgunda@crimson.ua.edu}. Code is available at \url{https://github.com/Hariaksha/wildfire-conflict}. All errors are my own.}}
+\author{Hariaksha Gunda\thanks{Email: \href{mailto:hgunda@crimson.ua.edu}{hgunda@crimson.ua.edu}. Code is available at \url{https://github.com/Hariaksha/smoke-and-strife}. All errors are my own.}}
 \affil{The University of Alabama}
 \date{Working paper, \today}
 
@@ -89,7 +89,7 @@ Most closely related to the present paper is \citet{lu2023fish}, which studies a
 \section{Data}
 \label{sec:data}
 
-All data-construction and analysis code for this project, including the panel-construction and spatial-matching steps described below, is available at \url{https://github.com/Hariaksha/wildfire-conflict}.
+All data-construction and analysis code for this project, including the panel-construction and spatial-matching steps described below, is available at \url{https://github.com/Hariaksha/smoke-and-strife}.
 
 \subsection{Fire activity}
 
@@ -550,7 +550,7 @@ These results bring together two literatures that have largely run in parallel: 
 
 \section*{Data Availability Statement}
 
-All analysis code, including the panel-construction, instrument-construction, and estimation notebooks described throughout this paper, is available at \href{https://github.com/Hariaksha/wildfire-conflict}{github.com/Hariaksha/wildfire-conflict}. The processed wind, precipitation, and temperature data (ERA5) used in this paper are also hosted in that repository. The raw ACLED conflict data are not, because ACLED's terms of use do not permit redistribution; the repository's \texttt{REPLICATION.md} explains how to obtain the same export (all event types, Indonesia, 1 January 2015 to 10 June 2025). The weather controls are constructed in \texttt{analysis/weather-controls.ipynb}, the pollution measures (MERRA-2 and MODIS MAIAC) and pollution IV in \texttt{analysis/pollution-iv.ipynb}, the conflict-propensity analysis in \texttt{analysis/conflict-propensity.ipynb}, and the lead, 2018--2025 and multiple-testing checks in \texttt{analysis/identification-checks.ipynb}. The processed district-month MERRA-2 PM2.5 and aerosol optical depth and MODIS MAIAC aerosol optical depth are also in the repository. The fire detections exceed standard GitHub file-size limits, and the GADM boundaries and ACLED events may not be redistributed, so these inputs are available directly from their original sources:
+All analysis code, including the panel-construction, instrument-construction, and estimation notebooks described throughout this paper, is available at \href{https://github.com/Hariaksha/smoke-and-strife}{github.com/Hariaksha/smoke-and-strife}. The processed wind, precipitation, and temperature data (ERA5) used in this paper are also hosted in that repository. The raw ACLED conflict data are not, because ACLED's terms of use do not permit redistribution; the repository's \texttt{REPLICATION.md} explains how to obtain the same export (all event types, Indonesia, 1 January 2015 to 10 June 2025). The weather controls are constructed in \texttt{analysis/weather-controls.ipynb}, the pollution measures (MERRA-2 and MODIS MAIAC) and pollution IV in \texttt{analysis/pollution-iv.ipynb}, the conflict-propensity analysis in \texttt{analysis/conflict-propensity.ipynb}, and the lead, 2018--2025 and multiple-testing checks in \texttt{analysis/identification-checks.ipynb}. The processed district-month MERRA-2 PM2.5 and aerosol optical depth and MODIS MAIAC aerosol optical depth are also in the repository. The fire detections exceed standard GitHub file-size limits, and the GADM boundaries and ACLED events may not be redistributed, so these inputs are available directly from their original sources:
 \begin{itemize}
     \item \textbf{Fire detections:} NASA VIIRS active fire product (Suomi-NPP, 375\,m resolution), available via NASA FIRMS at \url{https://firms.modaps.eosdis.nasa.gov/download/}.
     \item \textbf{Administrative boundaries:} GADM v4.1 Indonesia boundaries (Level 2, kabupaten/kota), available at \url{https://gadm.org/download_country.html}.

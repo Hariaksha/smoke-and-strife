@@ -105,7 +105,7 @@ Poster and abstract materials from prior conference presentations of this work.
 **Hariaksha Gunda**
 University of Alabama
 
-Repository: [https://github.com/Hariaksha/wildfire-conflict](https://github.com/Hariaksha/wildfire-conflict)
+Repository: [https://github.com/Hariaksha/smoke-and-strife](https://github.com/Hariaksha/smoke-and-strife)
 
 ---
 
