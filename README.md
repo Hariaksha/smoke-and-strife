@@ -36,7 +36,7 @@ See [`paper/main.pdf`](paper/main.pdf) for the full results and robustness analy
 - **Fire detections:** NASA VIIRS active fire product (Suomi-NPP, 375m resolution), via NASA FIRMS.
 - **Wind and weather:** ERA5 monthly reanalysis (Copernicus Climate Data Store): 10m wind components, total precipitation, and 2m temperature.
 - **Air pollution:** MERRA-2 monthly aerosol diagnostics (M2TMNXAER), from NASA GES DISC (requires a free NASA Earthdata account): surface PM2.5 and aerosol optical depth. MODIS MAIAC aerosol optical depth (MCD19A2CMG v061, daily 0.05°), from NASA LP DAAC with the same account. The processed district-month files are in `data/pollution/`; the monthly MAIAC pixel cache is rebuilt by the notebook and not committed.
-- **Conflict events:** ACLED (Armed Conflict Location & Event Data Project), Indonesia.
+- **Conflict events:** ACLED (Armed Conflict Location & Event Data Project), Indonesia. ACLED's licence does not allow redistributing its raw data, so the export is not included in this repository; see [`REPLICATION.md`](REPLICATION.md) for how to download it.
 - **Administrative boundaries:** GADM v4.1, Level 2 (kabupaten/kota).
 
 See the Data Availability Statement in the paper for details on reconstructing the raw inputs, some of which exceed GitHub's file-size limits and are linked to their public sources rather than hosted directly.

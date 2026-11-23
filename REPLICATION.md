@@ -19,7 +19,7 @@ This guide explains how to reproduce every table and figure in [`paper/main.pdf`
 
 | Input | Location in repo | In git? | How to obtain |
 |---|---|---|---|
-| ACLED conflict events, Indonesia (downloaded 10 June 2026) | `data/unrest/ACLED Data_2026-06-10.xlsx` | Yes | [acleddata.com](https://acleddata.com) (free account; export Indonesia, all event types) |
+| ACLED conflict events, Indonesia (downloaded 10 June 2026) | `data/unrest/ACLED Data_2026-06-10.xlsx` | **No** (ACLED's licence does not allow redistributing raw data) | [acleddata.com](https://acleddata.com): create an account and use the Data Export Tool to export all event types for Indonesia, 1 January 2015 to 10 June 2026. Save the Excel export at this path. Results were produced with the export downloaded on 10 June 2026; later exports may differ slightly because ACLED revises past events. |
 | VIIRS S-NPP 375 m active fire archive | `data/climate/fire/DL_FIRE_SUOMI-VIIRS-C2_718931_Nov2000-Feb2026_buffer0km-csv/fire_archive_SV-C2_718931.csv` | **No** (too large) | NASA FIRMS [archive download](https://firms.modaps.eosdis.nasa.gov/download/): Suomi-NPP VIIRS, Indonesia, CSV |
 | GADM v4.1 administrative boundaries, Indonesia | `data/administrative/gadm41_IDN_shp/` | **No** (GADM licence does not allow redistribution) | [gadm.org](https://gadm.org/download_country.html): Indonesia, shapefile |
 | ERA5 monthly 10 m wind (u, v) | `data/climate/wind/era5_wind_indonesia_2015_2025.nc` | Yes | Copernicus CDS; `wind-IV.ipynb` downloads it if missing (set the `CDSAPI_KEY` environment variable) |

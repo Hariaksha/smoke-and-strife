@@ -13,3 +13,5 @@ data/pollution/merra2_raw_tmp/
 data/pollution/maiac_monthly_cache/
 data/administrative/gadm41_IDN_shp/
 data/climate/weather/*.zip
+data/unrest/*.xlsx
+data/unrest/*.csv
