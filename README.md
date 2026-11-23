@@ -22,6 +22,7 @@ Local fire activity is plausibly endogenous to local conflict: land disputes, we
 - **Observed pollution does not confirm the first stage:** satellite aerosol optical depth from MODIS MAIAC (5 km) does not respond detectably to upwind fire (effective F 2–9), while MERRA-2 does on the same district-months. Likely reasons are that clouds and thick smoke remove the haziest days from the satellite record, and that MERRA-2's fire emissions are built from satellite fire detections. The pollution IV is therefore treated as suggestive of a pollution channel, and the reduced form remains the primary evidence.
 - **Not an artifact of the 30% cutoff:** using conflict propensity measured in 2015–2017, before the estimation window, the effect is near zero in districts with no prior conflict and grows steadily with prior conflict. In proportional (Poisson) terms the effect does not vary detectably with propensity, which suggests a similar small percentage effect everywhere that is only measurable where conflict is common.
 - **Identification checks:** next month's upwind fire does not predict this month's conflict (lead coefficient p = 0.985); the results strengthen on 2018–2025, after ACLED's Indonesia coverage expands; and the all-events result survives a false-discovery-rate correction across the four outcomes.
+- **Mechanisms:** in proportional terms, events initiated by state security forces fall about five times as much as protests, consistent with security forces being diverted to fire and haze response. Fatal events fall more than other events, and imprecisely reported events do not fall, which argues against a reporting explanation. Conflict does not rebound in the following months.
 - **Event types:** violence against civilians, most often committed by state security forces, is the most robust component. Political violence and Riots/VAC are suggestive only, since they weaken under the Anderson–Rubin test. Protests account for most of the decline in all events but do not survive the stricter checks.
 - No robust evidence that fire exposure affects conflict-related **fatalities**.
 
@@ -46,6 +47,7 @@ See the Data Availability Statement in the paper for details on reconstructing t
 - **Upwind instrument:** for each district-month, the total fire radiative power of detections within 300 km and within 45° of the direction the wind blows from.
 - **Reduced form and two-stage least squares** with district and year-month fixed effects and province-clustered standard errors. The endogenous variable is either the district's own fire intensity (log FRP), surface PM2.5 or aerosol optical depth from MERRA-2, or satellite aerosol optical depth from MODIS MAIAC.
 - **Weak-instrument diagnostics:** Montiel Olea–Pflueger effective F and Anderson–Rubin tests.
+- **Mechanisms:** decomposition by ACLED actor, sub-event type, source scale and precision; city and severe-fire-year heterogeneity; temporal and spatial displacement.
 - **Robustness:** conflict-activity heterogeneity and a pre-determined continuous conflict-propensity measure; event-type decompositions; placebo instruments and lead (placebo-in-time) tests; province × calendar-month and province × year-month fixed effects; own-fire-excluded instrument; local weather controls; Conley standard errors; a fully instrumented distributed-lag specification; a 2018–2025 sample; and sharpened q-values for multiple testing.
 
 ---
@@ -79,6 +81,7 @@ Run `wind-IV.ipynb` first; the other notebooks read the panel it writes (`iv_pan
 | `pollution-iv.ipynb` | MERRA-2 PM2.5 and aerosol optical depth, and MODIS MAIAC aerosol optical depth, as the endogenous variable, including the own-grid-point check and first-stage diagnostics (the MAIAC download takes 2–3 hours and needs the `pyhdf` package) |
 | `conflict-propensity.ipynb` | Continuous and binned conflict-propensity heterogeneity |
 | `identification-checks.ipynb` | Lead placebo, 2018–2025 sample, sharpened q-values |
+| `mechanisms.ipynb` | Tests of avoidance, state-capacity diversion and reporting explanations by event type, actor and source; temporal and spatial displacement |
 | `fixed-effects.ipynb` | Preliminary, non-instrumented correlational models |
 
 `generate_maps.py` produces the geographic figures used in the paper.
