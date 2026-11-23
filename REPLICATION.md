@@ -58,7 +58,7 @@ Run `wind-IV.ipynb` first. It builds the district-month panel (`analysis/iv_pane
 | Pollution IV, own-grid-point and MAIAC tables | `pollution-iv.ipynb` | `output/pollution_iv_results.csv`, `output/pollution_owngrid_reduced_form.csv`, `output/maiac_first_stage_diagnostics.csv` |
 | Summary statistics | computed from the panel built by `wind-IV.ipynb` | `iv_panel_district.csv` |
 | Conflict and fire maps (appendix) | `generate_maps.py` | `paper/figures/conflict_events_map.png`, `paper/figures/wildfire_events_map.png` |
-| Preliminary correlational models (appendix) | `fixed-effects.ipynb` | Early exploratory notebook; uses older ACLED and fire extracts not needed elsewhere |
+| Preliminary correlational models (appendix) | `fixed-effects.ipynb` | Printed in the notebook. Needs the NOAA-20 VIIRS fire archive, the BPS kecamatan/kabupaten boundaries (`data/administrative/batas_kec`, `batas_kab`), the BPS provincial HDI file and the ACLED weekly aggregated export, none of which other notebooks use |
 | Poisson control function, fatalities, placebo, seasonal FE, Conley, fully instrumented lags, regional/own-fire | `wind-IV.ipynb` | `output/placebo_test_results.csv`, `output/seasonal_robustness_results.csv`, `output/conley_se_results.csv`, `output/fully_instrumented_iv_results.csv`, `output/regional_ownfire_checks.csv`, `output/iv_fatalities_results.csv`, `output/rolling_exposure_results.csv`, `output/precision_robustness_results.csv` |
 | Weather controls and Anderson–Rubin tables | `weather-controls.ipynb` | `output/weather_controls_results.csv`, `output/anderson_rubin_results.csv` |
 | Excluding Papua | `papua.ipynb` | `output/papua_results.csv` |
