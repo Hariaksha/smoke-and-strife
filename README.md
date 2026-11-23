@@ -2,7 +2,7 @@
 
 Research project estimating the causal effect of wildfire-driven air pollution on social conflict in Indonesia, using a wind-direction instrument to isolate exogenous variation in local smoke exposure.
 
-The current draft working paper is in this repository: [`paper/draft_v4_pollution.pdf`](paper/draft_v4_pollution.pdf) ([source](paper/draft_v4_pollution.tex)). Earlier drafts are kept in `paper/` for reference.
+The current draft working paper is in this repository: [`paper/main.pdf`](paper/main.pdf) ([source](paper/main.tex)).
 
 ---
 
@@ -25,7 +25,7 @@ Local fire activity is plausibly endogenous to local conflict: land disputes, we
 - **Event types:** violence against civilians, most often committed by state security forces, is the most robust component. Political violence and Riots/VAC are suggestive only, since they weaken under the Anderson–Rubin test. Protests account for most of the decline in all events but do not survive the stricter checks.
 - No robust evidence that fire exposure affects conflict-related **fatalities**.
 
-See [`paper/draft_v4_pollution.pdf`](paper/draft_v4_pollution.pdf) for the full results and robustness analysis.
+See [`paper/main.pdf`](paper/main.pdf) for the full results and robustness analysis.
 
 ---
 
@@ -54,7 +54,7 @@ See the Data Availability Statement in the paper for details on reconstructing t
 
 ```text
 climate-conflict/
-├── paper/             # Draft working papers (draft_v4_pollution is current), references.bib, figures/
+├── paper/             # Working paper (main.tex is the current draft), references.bib, figures/
 ├── analysis/          # Jupyter notebooks (see below) and output/ (result tables and figures)
 ├── data/              # Raw and processed datasets (administrative, climate, pollution, unrest, wellbeing)
 ├── literature/        # Background papers cited in the project, plus lit-review.xlsx (annotated source list)
@@ -67,7 +67,7 @@ climate-conflict/
 ## Contents
 
 ### `paper/`
-The current draft, `draft_v4_pollution.tex`/`.pdf`, with its bibliography (`references.bib`) and figures (`figures/`). Earlier drafts (`draft.tex`, `draft_v2_weather_controls.tex`, `draft_v3_reduced_form.tex`) are kept for comparison.
+The current draft, `main.tex`/`.pdf`, with its bibliography (`references.bib`) and figures (`figures/`).
 
 ### `analysis/`
 Run `wind-IV.ipynb` first; the other notebooks read the panel it writes (`iv_panel_district.csv`).
@@ -107,4 +107,4 @@ Repository: [https://github.com/Hariaksha/wildfire-conflict](https://github.com/
 
 If you use or reference this project, please cite it as an unpublished working paper:
 
-> Gunda, H. *Smoke and Strife: Fire Exposure and Social Conflict in Indonesia.* Working paper, [paper/draft_v4_pollution.pdf](paper/draft_v4_pollution.pdf).
+> Gunda, H. *Smoke and Strife: Fire Exposure and Social Conflict in Indonesia.* Working paper, [paper/main.pdf](paper/main.pdf).
