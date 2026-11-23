@@ -73,7 +73,7 @@ climate-conflict/
 The current draft, `main.tex`/`.pdf`, with its bibliography (`references.bib`) and figures (`figures/`).
 
 ### `analysis/`
-Run `wind-IV.ipynb` first; the other notebooks read the panel it writes (`iv_panel_district.csv`).
+See [`REPLICATION.md`](REPLICATION.md) for software, data sources, run order and the notebook behind each table and figure. Run `wind-IV.ipynb` first; the other notebooks read the panel it writes (`iv_panel_district.csv`).
 
 | Notebook | Contents |
 |---|---|

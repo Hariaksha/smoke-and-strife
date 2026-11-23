@@ -3,3 +3,13 @@ __pycache__/
 .DS_Store
 .venv/
 *.bak
+
+# dashboard: large raw archives stay local; artifacts in dashboard/data are committed
+data/climate/fire/
+data/administrative/batas_*
+data/pollution/merra2_raw_tmp/
+
+# local caches and licensed raw data (see REPLICATION.md)
+data/pollution/maiac_monthly_cache/
+data/administrative/gadm41_IDN_shp/
+data/climate/weather/*.zip

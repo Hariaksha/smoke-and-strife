@@ -1,0 +1,11 @@
+specification,effective_F
+Table 1 first stage (full panel),81.3277706024243
+"Distributed-lag IV (IV-1, IV-2), full panel",75.67132731637405
+"Contemporaneous IV (IV-3, IV-4), full panel",85.73148061499182
+"Distributed-lag IV, active >= 5%",60.536430956150916
+"Distributed-lag IV, active >= 10%",53.4060254855175
+"Distributed-lag IV, active >= 20%",39.19428184368069
+"Distributed-lag IV, active >= 30%",26.38698107458103
+"Seasonal FE, full panel",80.3644020399299
+"Seasonal FE, active >= 30%",10.45854403815291
+"Placebo instrument, active >= 30%",3.5046580698255156

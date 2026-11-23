@@ -8,12 +8,13 @@ import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent  # repository root
 
 # ── Paths (same raw inputs as wind-IV.ipynb) ────────────────────────────────
-ACLED_XLSX   = '/Users/hariaksha/Documents/GitHub/climate-conflict/data/unrest/ACLED Data_2026-06-10.xlsx'
-FIRE_CSV     = '/Users/hariaksha/Documents/GitHub/climate-conflict/data/climate/fire/DL_FIRE_SUOMI-VIIRS-C2_718931_Nov2000-Feb2026_buffer0km-csv/fire_archive_SV-C2_718931.csv'
-DISTRICT_SHP = '/Users/hariaksha/Documents/GitHub/climate-conflict/data/administrative/gadm41_IDN_shp/gadm41_IDN_2.shp'
-OUT_DIR      = Path('/Users/hariaksha/Documents/GitHub/climate-conflict/paper/figures')
+ACLED_XLSX   = str(ROOT / 'data/unrest/ACLED Data_2026-06-10.xlsx')
+FIRE_CSV     = str(ROOT / 'data/climate/fire/DL_FIRE_SUOMI-VIIRS-C2_718931_Nov2000-Feb2026_buffer0km-csv/fire_archive_SV-C2_718931.csv')
+DISTRICT_SHP = str(ROOT / 'data/administrative/gadm41_IDN_shp/gadm41_IDN_2.shp')
+OUT_DIR      = ROOT / 'paper' / 'figures'
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── Sample window (matches the paper's panel: Feb 2015 - Jun 2025) ──────────
