@@ -25,7 +25,7 @@
 \maketitle
 
 \begin{abstract}
-\noindent Seasonal land and forest fires blanket much of Indonesia in severe air pollution (``haze'') each year. I ask whether exposure to this fire-driven pollution affects social conflict, using fire activity upwind of each of 481 districts, where the prevailing wind would carry smoke toward it, as a source of variation driven by wind rather than by local conditions. In districts where conflict is common, more upwind fire reduces monthly conflict events. Across all districts the proportional effect is similar but too small to detect in event counts. The result is robust to excluding the district's own fires, controlling for local weather, and adding next month's fire as a placebo. Two tests point to two channels. Protests fall with smoke from fires in other provinces, which cannot draw on local security forces, consistent with a direct effect of smoke. Events carried out by security forces fall about five times as much as protests in proportional terms, and significantly only with fires in the district's own province, whose fire response the same forces staff, consistent with diversion of state capacity. Fatal events fall more than other events, which argues against a reporting explanation. The negative effect contrasts with evidence that pollution raises individual crime, and suggests that environmental shocks can reduce collective contention both through smoke and by diverting security forces to disaster response.
+\noindent Seasonal land and forest fires blanket much of Indonesia in severe air pollution (``haze'') each year. I ask whether exposure to this fire-driven pollution affects social conflict, using fire activity upwind of each of 481 districts, whose smoke the prevailing wind would carry toward the district, as a source of variation driven by wind rather than by local conditions. In districts where conflict is common, more upwind fire reduces monthly conflict events. In proportional terms the effect is similar in all districts, but it is detectable in event counts only where conflict is common. The result is robust to excluding the district's own fires, controlling for local weather, and adding next month's fire as a placebo. Two tests point to two channels. Protests fall with smoke from fires in other provinces, which cannot draw on local security forces, consistent with a direct effect of smoke. Events carried out by security forces fall about five times as much as protests in proportional terms, and significantly only with fires in the district's own province, whose fire response the same forces staff, consistent with diversion of state capacity. Fatal events fall more than other events, which argues against a reporting explanation. The negative effect contrasts with evidence that pollution raises individual crime, and suggests that environmental shocks can reduce collective contention both through smoke and by diverting security forces to disaster response.
 
 \medskip
 \noindent\textbf{JEL codes:} Q53, Q54, D74, H56 \quad \textbf{Keywords:} air pollution, wildfire, conflict, Indonesia, state capacity
@@ -65,7 +65,7 @@ The paper contributes to three literatures. First, it adds to work on pollution 
 
 \paragraph{Conflict.} Conflict events come from the Armed Conflict Location \& Event Data Project (ACLED), from January 2015 to June 2025. I assign each event to the GADM Level-2 district polygon that contains its coordinates rather than using ACLED's district names, which merge cities with the surrounding regencies; all 21,653 events in the sample window are assigned. The main outcome is the monthly count of all events. I also study political violence (riots, violence against civilians, battles, and explosions) and, for the mechanism tests, finer counts by event type, actor, source, and precision.
 
-\paragraph{Panel.} The panel crosses the 481 districts with at least one recorded event with 125 months (February 2015 to June 2025), for 60,125 district-months. Conflict is rare: 82.9\% of district-months record no event, and the mean is 0.36 events. It is concentrated in Java, Sumatra, and Papua, while fires are concentrated in Sumatra, Kalimantan, and Papua, so many conflict-prone districts lie downwind of fire regions without burning themselves.
+\paragraph{Panel.} The panel crosses the 481 districts with at least one recorded event with 125 months (February 2015 to June 2025), for 60,125 district-months. Conflict is rare: 82.9\% of district-months record no event, and the mean is 0.36 events. Conflict is concentrated in Java, Sumatra, and Papua, while fires are concentrated in Sumatra, Kalimantan, and Papua, so many conflict-prone districts lie downwind of fire regions without burning themselves.
 
 \section{Empirical Strategy}
 \label{sec:empirical}
@@ -94,7 +94,7 @@ where $y_{dt}$ is a conflict count, $\alpha_d$ are district fixed effects, and $
 
 Table~\ref{tab:rf} reports the reduced form for four outcomes, in the full panel and in the 85 ``conflict-active'' districts that record conflict in at least 30\% of months. In the full panel, all four coefficients are negative but small and insignificant. In the conflict-active districts, a one-log-point increase in upwind FRP reduces all events by 0.026 per district-month ($p=0.002$), 1.9\% of the mean, and the Anderson--Rubin test, which is robust to weak instruments, rejects a zero effect ($p=0.012$). The decline in political violence is smaller in absolute terms and less precisely estimated ($p=0.078$). Within political violence, it comes from riots and violence against civilians.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Reduced form: effect of upwind fire on monthly conflict events}
 \label{tab:rf}
@@ -126,7 +126,7 @@ Anderson--Rubin $p$ & 0.012 & 0.164 & 0.066 & 0.024 \\
 
 The 30\% cutoff was not chosen in advance and is measured over the same months used for estimation. To avoid both problems, I measure each district's conflict history before the estimation window, as the number of months in 2015--2017 with any ACLED event, and estimate the reduced form on 2018--2025 separately for districts with 0, 1, 2--5, and 6 or more such months. As a second measure that keeps the full sample, I compute each district-year's conflict propensity from all \emph{other} years and group districts into quintiles.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/conflict_propensity_bins.png}
 \caption{Reduced-form effect of upwind fire by prior conflict propensity. Each point is the coefficient on contemporaneous log upwind FRP, estimated separately for each group, with 95\% confidence intervals from province-clustered standard errors. Left: districts grouped by months with any event in 2015--2017, estimated on 2018--2025. Right: quintiles of leave-one-year-out conflict propensity, estimated on 2015--2025.}
@@ -140,7 +140,7 @@ Figure~\ref{fig:propensity} shows a gradient rather than a threshold. The effect
 
 Table~\ref{tab:robust} reports the all-events reduced form in the conflict-active districts under the main robustness checks.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Robustness of the reduced form, all events, conflict-active districts}
 \label{tab:robust}
@@ -187,7 +187,7 @@ Baseline & 85 & $-0.0261$ & 0.002 \\
 
 Three explanations make different predictions about which events decline. \emph{Avoidance}: haze keeps people indoors, so protests and other crowd events should fall most. \emph{State-capacity diversion}: security forces are redeployed to fire response, so events carried out by state forces should fall most. \emph{Reporting}: haze or fire coverage crowds out conflict reporting, so events reported by local sources and events located or dated imprecisely should fall most, and fatal events, which are hard to miss, should fall least. Because the outcomes differ greatly in frequency, Table~\ref{tab:mechanisms} reports Poisson (PPML) estimates of Eq.~\eqref{eq:rf}, whose coefficients are proportional effects and comparable across outcomes.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Proportional effects of upwind fire by event type, actor, and reporting (conflict-active districts)}
 \label{tab:mechanisms}
@@ -223,14 +223,14 @@ All events & 1.398 & $-0.013$ (0.006) & 0.030 \\
 
 The largest proportional declines are in events carried out by state forces ($-6.3\%$ per log point, $p<0.001$) and in violence against civilians ($-6.7\%$), about five times the decline in peaceful protests ($-1.4\%$, $p=0.017$). Protests account for most of the decline in the \emph{number} of events only because they are by far the most common event type. Non-state violence as a whole does not decline. The reporting explanation fits poorly: events from national sources fall in proportion to all events, imprecisely recorded events do not fall at all, and fatal events, the least likely to go unreported, fall by 5\% per log point, four times as much as all events. Finally, conflict is not merely postponed: adding two further monthly lags of upwind fire, every lag coefficient for all events is negative, and the four-month cumulative effect ($-0.037$, $p=0.030$) is larger than the contemporaneous effect alone.
 
-\subsection{Smoke or fire response? Same-province and other-province fire}
+\subsection{Smoke or fire response?}
 \label{sec:province}
 
 The test above leaves a gap. Upwind fire often burns in other districts, so it is not obvious why it should draw on the security forces of the district that receives the smoke. Indonesia's fire-response arrangements suggest a sharper test. Because fire task forces are organized by province, fires in a district's own province draw on its security forces, while fires in another province reach it only as smoke. If the decline in state violence reflects the diversion of security forces, it should respond mainly to same-province fire; if it reflects smoke, the source province should not matter.
 
 I split each upwind fire's FRP into a same-province and an other-province component according to where it burns. Same-province fires account for 54\% of upwind FRP, and the two components are only weakly correlated (0.23), so their effects can be estimated separately. Table~\ref{tab:province} reports the reduced form with both components.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Same-province and other-province upwind fire (conflict-active districts, PPML)}
 \label{tab:province}
