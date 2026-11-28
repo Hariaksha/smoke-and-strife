@@ -44,9 +44,9 @@ The pattern of declines points to two channels. Events carried out by state forc
 \section{Setting and Data}
 \label{sec:data}
 
-Smoke from Indonesian fires is a severe pollution shock: the 1997 fires caused an estimated 15,600 child and infant deaths \citep{jayachandran2009}. Fire response draws directly on the security forces. Presidential instructions issued in 2015 and 2020 direct the armed forces and national police to deploy personnel to fight fires and patrol fire-prone areas, and under the 2020 instruction the provincial military commander and police chief serve as deputy commanders of each province's fire task force \citep{inpres11_2015, inpres3_2020}.
+Smoke from Indonesian fires is a severe pollution shock: the 1997 fires caused an estimated 15,600 fetal, infant, and child deaths \citep{jayachandran2009}. Fire response draws directly on the security forces. Presidential instructions issued in 2015 and 2020 direct the armed forces and national police to deploy personnel to fight fires and patrol fire-prone areas, and under the 2020 instruction the provincial military commander and police chief serve as deputy commanders of each province's fire task force \citep{inpres11_2015, inpres3_2020}.
 
-Fire detections come from the VIIRS active fire product (375\,m), restricted to high- and nominal-confidence vegetation fires, each with its fire radiative power. Monthly wind, precipitation, and temperature come from ERA5 \citep{hersbach2023era5}. Conflict events come from ACLED, January 2015 to June 2025; I assign each event to the GADM district polygon containing its coordinates, since ACLED's district names merge cities with surrounding regencies. The panel crosses the 481 districts with any event with 125 months. Conflict is rare: 82.9\% of district-months record no event.
+Fire detections come from the VIIRS active fire product (375\,m), restricted to high- and nominal-confidence vegetation fires, each with its fire radiative power. Monthly wind, precipitation, and temperature come from ERA5 \citep{hersbach2023era5}. Conflict events come from ACLED, January 2015 to June 2025; I assign each event to the GADM district polygon containing its coordinates, since ACLED's district names merge cities with surrounding regencies. The panel covers the 481 districts that record at least one event, observed in each of 125 months. Conflict is rare: 82.9\% of district-months record no event.
 
 \section{Empirical Strategy}
 \label{sec:empirical}
@@ -137,7 +137,7 @@ Baseline & 85 & $-0.0261$ & 0.002 \\
 \end{tabular}
 \begin{minipage}{0.95\textwidth}
 \vspace{4pt}
-\footnotesize \emph{Notes:} Each row reports the coefficient on contemporaneous log upwind FRP in Eq.~\eqref{eq:rf} with all events as the outcome, modified as indicated. District and year-month fixed effects in all rows; standard errors clustered by province.
+\footnotesize \emph{Notes:} Each row reports the coefficient on contemporaneous log upwind FRP in Eq.~\eqref{eq:rf} with all events as the outcome, modified as indicated; the ``lead coefficient'' row reports the coefficient on next month's upwind FRP, and the placebo row the coefficient on the distant district's upwind FRP. District and year-month fixed effects in all rows; standard errors clustered by province.
 \end{minipage}
 \end{table}
 
@@ -174,7 +174,7 @@ Non-state violence & $-0.001$ (0.025) & $+0.005$ (0.019) & 0.875 \\
 \end{minipage}
 \end{table}
 
-Protests fall with other-province fire ($-1.8\%$, $p=0.001$) but not with same-province fire, so their decline is best explained by smoke itself. Events carried out by state forces fall significantly only with same-province fire ($-4.5\%$, $p=0.009$), consistent with security forces being diverted to fire response, although the imprecise other-province estimate means equal effects cannot be rejected. Both patterns hold outside Papua. Same-province fires are also closer on average, so the contrast is partly between near and far fires.
+Protests fall with other-province fire ($-1.8\%$, $p=0.001$) but not with same-province fire, so their decline is best explained by smoke itself. Events carried out by state forces fall significantly only with same-province fire ($-4.5\%$, $p=0.009$), consistent with security forces being diverted to fire response, although the imprecise other-province estimate means equal effects cannot be rejected. Both patterns hold outside Papua, although the same-province decline in state-force events is then only marginally significant ($p=0.055$). Same-province fires are also closer on average, so the contrast is partly between near and far fires.
 
 Finally, instrumenting MERRA-2 reanalysis PM2.5 \citep{gelaro2017merra} with upwind fire gives a strong first stage (effective $F=25.7$) and a negative effect of pollution on conflict (Anderson--Rubin $p=0.004$). But satellite-observed aerosols do not respond detectably to upwind fire, plausibly because clouds and smoke remove the haziest days from the satellite record, so the pollution channel is suggestive rather than confirmed.
 
